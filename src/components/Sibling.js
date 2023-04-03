@@ -1,39 +1,39 @@
 import React, { useEffect, useState } from 'react';
 
 function Sibling() {
-  const [schools, setSchools] = useState([]);
+  const [siblings, setSiblings] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:9292/siblings')
       .then((r) => r.json())
-      .then((data) => setSchools(data));
+      .then((data) => setSiblings(data));
   }, []);
 
   return (
     <div>
-      <h1>List Of Schools</h1>
+      <h1>Listing Student Siblings</h1>
       <table>
         <thead>
           <tr>
-            <th>Form</th>
-            <th>Class/Stream</th>
-            <th>Term</th>
-            <th>Position last term</th>
-            <th>Principal Name</th>
-            <th>Contact</th>
+            <th>Name</th>
+            <th>Relationship</th>
+            <th>School</th>
+            <th>Form/Class</th>
+            <th>Total fee</th>
+            <th>Outstanding balance</th>
             <th>Student Id</th>
           </tr>
         </thead>
         <tbody>
-          {schools.map((school) => (
-            <tr key={school.id}>
-              <td>{school.form}</td>
-              <td>{school.stream}</td>
-              <td>{school.term}</td>
-              <td>{school.last_term_position}</td>
-              <td>{school.principal}</td>
-              <td>{school.contact}</td>
-              <td>{school.student_id}</td>
+          {siblings.map((sibling) => (
+            <tr key={sibling.id}>
+              <td>{sibling.name}</td>
+              <td>{sibling.relationship}</td>
+              <td>{sibling.school}</td>
+              <td>{sibling.form_class}</td>
+              <td>{sibling.total_fee}</td>
+              <td>{sibling.outstanding_balance}</td>
+              <td>{sibling.student_id}</td>
             </tr>
           ))}
         </tbody>
