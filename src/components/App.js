@@ -6,7 +6,7 @@ import Student from "./Student";
 import Parent from "./Parent";
 import School from "./School";
 import Sibling from "./Sibling";
-// import '../../src/App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Constraint from "./Constraint";
 
 

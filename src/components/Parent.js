@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Table from 'react-bootstrap/Table';
 
 function Parent() {
   const [parents, setParents] = useState([]);
@@ -12,7 +13,7 @@ function Parent() {
   return (
     <div>
       <h1>List Of Parents</h1>
-      <table>
+      <Table responsive>
         <thead>
           <tr>
             <th>Father's Name</th>
@@ -44,7 +45,7 @@ function Parent() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }

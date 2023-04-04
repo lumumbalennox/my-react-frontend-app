@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Table from 'react-bootstrap/Table';
 
 function Constraint() {
   const [constraints, setConstraints] = useState([]);
@@ -12,7 +13,7 @@ function Constraint() {
   return (
     <div>
       <h1>Listing Fee Constraints on Parents / Guardian</h1>
-      <table>
+      <Table responsive>
         <thead>
           <tr>
             <th>Number of siblings</th>
@@ -30,7 +31,7 @@ function Constraint() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }

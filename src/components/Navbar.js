@@ -2,15 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 /*NavLinks styling */
-// const linkStyles = {
-//   display: "inline-block",
-//   width: "100px",
-//   padding: "6px",
-//   margin: "0 6px 6px",
-//   background: "blue",
-//   textDecoration: "none",
-//   color: "white",
-// };
+const linkStyles = {
+  display: "inline-block",
+  width: "100px",
+  padding: "6px",
+  margin: "0 6px 6px",
+  background: "blue",
+  textDecoration: "none",
+  color: "white",
+};
 function Navbar() {
   return (
     <div id="site-navbar">
@@ -26,7 +26,7 @@ function Navbar() {
                                 className="nav-link"
                                 to="/"
                                 exact
-                                // style={linkStyles}
+                                style={linkStyles}
                                 activeStyle={{
                                 background: "green",
                             
@@ -41,7 +41,7 @@ function Navbar() {
                                 className="nav-link"
                                 to="/student"
                                 exact
-                                // style={linkStyles}
+                                style={linkStyles}
                                 activeStyle={{
                                   background: "green",
                                 }}
@@ -55,7 +55,7 @@ function Navbar() {
                                 className="nav-link"
                                 to="/parent"
                                 exact
-                                // style={linkStyles}
+                                style={linkStyles}
                                 activeStyle={{
                                   background: "green",
                                 }}
@@ -69,7 +69,7 @@ function Navbar() {
                                 className="nav-link"
                                 to="/school"
                                 exact
-                                // style={linkStyles}
+                                style={linkStyles}
                                 activeStyle={{
                                   background: "green",
                                 }}
@@ -82,7 +82,7 @@ function Navbar() {
                                 className="nav-link"
                                 to="/sibling"
                                 exact
-                                // style={linkStyles}
+                                style={linkStyles}
                                 activeStyle={{
                                   background: "green",
                                 }}
@@ -96,7 +96,7 @@ function Navbar() {
                                 className="nav-link"
                                 to="/constraint"
                                 exact
-                                // style={linkStyles}
+                                style={linkStyles}
                                 activeStyle={{
                                   background: "green",
                                 }}
@@ -107,7 +107,7 @@ function Navbar() {
                     </ul>      
 
                     <div class="rightNav">
-                                    <input type="text" placeholder="Search.." />
+                                    {/* <input type="text" placeholder="Search.." /> */}
                                     {/* <button class="btn">Search</button> */}
                     </div>
                             

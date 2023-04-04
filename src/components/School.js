@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Table from 'react-bootstrap/Table';
 
 function School() {
   const [schools, setSchools] = useState([]);
@@ -12,7 +13,7 @@ function School() {
   return (
     <div>
       <h1>List Of Schools</h1>
-      <table>
+      <Table responsive>
         <thead>
           <tr>
             <th>Form</th>
@@ -37,7 +38,7 @@ function School() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
