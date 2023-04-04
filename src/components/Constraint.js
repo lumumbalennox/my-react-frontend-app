@@ -10,6 +10,18 @@ function Constraint() {
       .then((data) => setConstraints(data));
   }, []);
 
+  const handleDelete = (constraintId) => {
+    fetch(`http://localhost:9292/constraints/${constraintId}`, {
+      method: 'DELETE'
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        // remove the deleted parent from the list
+        const updatedConstraints = constraints.filter((constraint) => constraint.id !== constraintId);
+        setConstraints(updatedConstraints);
+      });
+  };
+
   return (
     <div>
       <h1>Listing Fee Constraints on Parents / Guardian</h1>
@@ -20,6 +32,7 @@ function Constraint() {
             <th>Number in Secondary</th>
             <th>Number in Colleges</th>
             <th>Parent Id</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +41,7 @@ function Constraint() {
               <td>{constraint.how_many_children_do_you_have}</td>
               <td>{constraint.how_many_in_secondary}</td>
               <td>{constraint.parents_id}</td>
+              <td> <button onClick={() => handleDelete(constraint.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>

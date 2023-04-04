@@ -10,6 +10,18 @@ function School() {
       .then((data) => setSchools(data));
   }, []);
 
+  const handleDelete = (schoolId) => {
+    fetch(`http://localhost:9292/schools/${schoolId}`, {
+      method: 'DELETE'
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        // remove the deleted parent from the list
+        const updatedSchools = schools.filter((school) => school.id !== schoolId);
+        setSchools(updatedSchools);
+      });
+  };
+
   return (
     <div>
       <h1>List Of Schools</h1>
@@ -23,6 +35,7 @@ function School() {
             <th>Principal Name</th>
             <th>Contact</th>
             <th>Student Id</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +48,7 @@ function School() {
               <td>{school.principal}</td>
               <td>{school.contact}</td>
               <td>{school.student_id}</td>
+              <td> <button onClick={() => handleDelete(school.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>

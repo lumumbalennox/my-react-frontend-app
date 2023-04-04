@@ -10,6 +10,18 @@ function Sibling() {
       .then((data) => setSiblings(data));
   }, []);
 
+  const handleDelete = (siblingId) => {
+    fetch(`http://localhost:9292/siblings/${siblingId}`, {
+      method: 'DELETE'
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        // remove the deleted parent from the list
+        const updatedSiblings = siblings.filter((sibling) => sibling.id !== siblingId);
+        setSiblings(updatedSiblings);
+      });
+  };
+
   return (
     <div>
       <h1>Listing Student Siblings</h1>
@@ -23,6 +35,7 @@ function Sibling() {
             <th>Total fee</th>
             <th>Outstanding balance</th>
             <th>Student Id</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +48,7 @@ function Sibling() {
               <td>{sibling.total_fee}</td>
               <td>{sibling.outstanding_balance}</td>
               <td>{sibling.student_id}</td>
+              <td> <button onClick={() => handleDelete(sibling.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>

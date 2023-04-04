@@ -10,6 +10,18 @@ function Student() {
       .then((data) => setStudents(data));
   }, []);
 
+  const handleDelete = (studentId) => {
+    fetch(`http://localhost:9292/students/${studentId}`, {
+      method: 'DELETE'
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        // remove the deleted parent from the list
+        const updatedStudents = students.filter((student) => student.id !== studentId);
+        setStudents(updatedStudents);
+      });
+  };
+
   return (
     <div>
       <h1>List Students</h1>
@@ -32,6 +44,7 @@ function Student() {
             <th>Amount</th>
             <th>Parent Id</th>
             <th>School Id</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -53,6 +66,7 @@ function Student() {
               <td>{student.other_bursaries_received_amount}</td>
               <td>{student.parents_id}</td>
               <td>{student.school_id}</td>
+              <td> <button onClick={() => handleDelete(student.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>

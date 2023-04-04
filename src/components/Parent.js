@@ -10,6 +10,18 @@ function Parent() {
       .then((data) => setParents(data));
   }, []);
 
+  const handleDelete = (parentId) => {
+    fetch(`http://localhost:9292/parents/${parentId}`, {
+      method: 'DELETE'
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        // remove the deleted parent from the list
+        const updatedParents = parents.filter((parent) => parent.id !== parentId);
+        setParents(updatedParents);
+      });
+  };
+
   return (
     <div>
       <h1>List Of Parents</h1>
@@ -27,6 +39,7 @@ function Parent() {
             <th>Disability nature</th>
             <th>From poor household?</th>
             <th>Who has been paying fee?</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +55,7 @@ function Parent() {
               <td>{parent.if_yes_disability_nature}</td>
               <td>{parent.is_from_poor_household? 'Yes' : 'No'}</td>
               <td>{parent.who_has_been_paying_your_fee}</td>
+              <td> <button onClick={() => handleDelete(parent.id)}>Delete</button></td>
             </tr>
           ))}
         </tbody>
