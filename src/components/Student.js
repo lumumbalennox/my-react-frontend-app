@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 
 function Student() {
   const [students, setStudents] = useState([]);
-
+  
   useEffect(() => {
     fetch('http://localhost:9292/students')
       .then((r) => r.json())
