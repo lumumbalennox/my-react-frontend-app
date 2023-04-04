@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 function Constraint() {
   const [constraints, setConstraints] = useState([]);
@@ -41,7 +42,8 @@ function Constraint() {
               <td>{constraint.how_many_children_do_you_have}</td>
               <td>{constraint.how_many_in_secondary}</td>
               <td>{constraint.parents_id}</td>
-              <td> <button onClick={() => handleDelete(constraint.id)}>Delete</button></td>
+              {/* <td> <button onClick={() => handleDelete(constraint.id)}>Delete</button></td> */}
+              <td> <Button variant="primary" type="submit" onClick={() => handleDelete(constraint.id)}>Delete</Button></td>
             </tr>
           ))}
         </tbody>

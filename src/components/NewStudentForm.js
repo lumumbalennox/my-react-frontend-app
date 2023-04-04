@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
 
 function NewStudentForm() {
   const [fname, setFname] = useState('');

@@ -28,7 +28,7 @@ function Navbar() {
                                 exact
                                 style={linkStyles}
                                 activeStyle={{
-                                background: "green",
+                                background: "teal",
                             
                                 }}
                             >
@@ -43,7 +43,7 @@ function Navbar() {
                                 exact
                                 style={linkStyles}
                                 activeStyle={{
-                                  background: "green",
+                                  background: "teal",
                                 }}
                             >
                             Student
@@ -57,7 +57,7 @@ function Navbar() {
                                 exact
                                 style={linkStyles}
                                 activeStyle={{
-                                  background: "green",
+                                  background: "teal",
                                 }}
                             >
                                 Parent
@@ -71,7 +71,7 @@ function Navbar() {
                                 exact
                                 style={linkStyles}
                                 activeStyle={{
-                                  background: "green",
+                                  background: "teal",
                                 }}
                                 >
                                 School
@@ -84,7 +84,7 @@ function Navbar() {
                                 exact
                                 style={linkStyles}
                                 activeStyle={{
-                                  background: "green",
+                                  background: "teal",
                                 }}
                                 >
                                 Sibling
@@ -98,7 +98,7 @@ function Navbar() {
                                 exact
                                 style={linkStyles}
                                 activeStyle={{
-                                  background: "green",
+                                  background: "teal",
                                 }}
                                 >
                                 Constraint

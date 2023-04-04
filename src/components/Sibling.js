@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 function Sibling() {
   const [siblings, setSiblings] = useState([]);
@@ -48,7 +49,8 @@ function Sibling() {
               <td>{sibling.total_fee}</td>
               <td>{sibling.outstanding_balance}</td>
               <td>{sibling.student_id}</td>
-              <td> <button onClick={() => handleDelete(sibling.id)}>Delete</button></td>
+              {/* <td> <button onClick={() => handleDelete(sibling.id)}>Delete</button></td> */}
+              <td> <Button variant="primary" type="submit" onClick={() => handleDelete(sibling.id)}>Delete</Button></td>
             </tr>
           ))}
         </tbody>

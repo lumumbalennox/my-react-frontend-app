@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 function School() {
   const [schools, setSchools] = useState([]);
@@ -48,7 +49,8 @@ function School() {
               <td>{school.principal}</td>
               <td>{school.contact}</td>
               <td>{school.student_id}</td>
-              <td> <button onClick={() => handleDelete(school.id)}>Delete</button></td>
+              {/* <td> <button onClick={() => handleDelete(school.id)}>Delete</button></td> */}
+              <td> <Button variant="primary" type="submit" onClick={() => handleDelete(school.id)}>Delete</Button></td>
             </tr>
           ))}
         </tbody>

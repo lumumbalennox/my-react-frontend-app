@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+// import NewStudentForm from './NewStudentForm';
 
 function Student() {
   const [students, setStudents] = useState([]);
@@ -66,11 +68,12 @@ function Student() {
               <td>{student.other_bursaries_received_amount}</td>
               <td>{student.parents_id}</td>
               <td>{student.school_id}</td>
-              <td> <button onClick={() => handleDelete(student.id)}>Delete</button></td>
+              <td> <Button variant="primary" type="submit" onClick={() => handleDelete(student.id)}>Delete</Button></td>
             </tr>
           ))}
         </tbody>
       </Table>
+      {/* <NewStudentForm /> */}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 function Parent() {
   const [parents, setParents] = useState([]);
@@ -55,7 +56,8 @@ function Parent() {
               <td>{parent.if_yes_disability_nature}</td>
               <td>{parent.is_from_poor_household? 'Yes' : 'No'}</td>
               <td>{parent.who_has_been_paying_your_fee}</td>
-              <td> <button onClick={() => handleDelete(parent.id)}>Delete</button></td>
+              {/* <td> <button onClick={() => handleDelete(parent.id)}>Delete</button></td> */}
+              <td> <Button variant="primary" type="submit" onClick={() => handleDelete(parent.id)}>Delete</Button></td>
             </tr>
           ))}
         </tbody>
