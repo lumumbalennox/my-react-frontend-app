@@ -34,6 +34,20 @@ function Navbar() {
                             >
                                 Home
                             </NavLink>
+
+                            <NavLink
+                                className="nav-link"
+                                to="/newstudentform"
+                                exact
+                                style={linkStyles}
+                                activeStyle={{
+                                background: "teal",
+                            
+                                }}
+                            >
+                                NewStudent
+                            </NavLink>
+
                         </li>    
                         <li className="nav-item">
 

@@ -8,7 +8,7 @@ import School from "./School";
 import Sibling from "./Sibling";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Constraint from "./Constraint";
-
+import NewStudentForm from "./NewStudentForm";
 
 function App() {
  
@@ -23,6 +23,10 @@ function App() {
       </header>
 
       <Switch>
+      <Route exact path="/newstudentform">
+          <NewStudentForm />
+        </Route>
+
       <Route exact path="/student">
           <Student />
         </Route>

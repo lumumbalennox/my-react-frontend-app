@@ -55,10 +55,14 @@ body {
 .nav-link:hover{
   /* color: rgb(64, 255, 0); */
   color: #ffff !important;
-  border-bottom: 2px solid tomato;
+  border-bottom: 2px solid rgb(7, 7, 7);
 }
 
 .sizehomepgheight {
   min-height: 100vh;
   margin-top: 40px
+}
+
+input {
+  width: 40%;
 }
