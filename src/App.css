@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #b41c3d;
+  background-color: #f1e8ea;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 
 /*Adding styling*/
 body {
-  background-color: #46A094;
+  background-color: #aa91f1;
   color: rgb(245, 241, 241);
   padding: 40px;
   font-family: Arial;
@@ -63,6 +63,48 @@ body {
   margin-top: 40px
 }
 
-input {
-  width: 40%;
+form {
+  width: 30%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.rotate {
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

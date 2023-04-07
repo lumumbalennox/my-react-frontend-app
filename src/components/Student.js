@@ -26,7 +26,7 @@ function Student() {
 
   return (
     <div>
-      <h1>List Students</h1>
+      <h1>Applicants List</h1>
       <Table responsive>
         <thead>
           <tr>

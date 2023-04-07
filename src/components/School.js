@@ -25,7 +25,7 @@ function School() {
 
   return (
     <div>
-      <h1>List Of Schools</h1>
+      <h1>Schools & Institutions of Applicants & Siblings</h1>
       <Table responsive>
         <thead>
           <tr>

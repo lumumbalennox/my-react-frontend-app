@@ -25,7 +25,7 @@ function Parent() {
 
   return (
     <div>
-      <h1>List Of Parents</h1>
+      <h1>Parents , Guardians or Caregivers</h1>
       <Table responsive>
         <thead>
           <tr>

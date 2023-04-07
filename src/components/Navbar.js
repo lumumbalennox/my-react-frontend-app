@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from '../images/logo.png';
 
 /*NavLinks styling */
 const linkStyles = {
@@ -12,12 +13,16 @@ const linkStyles = {
   color: "white",
 };
 function Navbar() {
+
   return (
     <div id="site-navbar">
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid nav-container">
+            <NavLink className="navbar-brand" to="/">
+                    <img src={logo} alt="logo" />
+                </NavLink>
                 <p className="navbar-brand">
-                    React App Frontend
+                    NG-CDF BURSARY APP
                 </p>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
@@ -122,7 +127,7 @@ function Navbar() {
 
                     <div class="rightNav">
                                     {/* <input type="text" placeholder="Search.." /> */}
-                                    {/* <button class="btn">Search</button> */}
+                                
                     </div>
                             
                 </div>

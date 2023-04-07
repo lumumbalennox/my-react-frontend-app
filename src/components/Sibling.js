@@ -25,7 +25,7 @@ function Sibling() {
 
   return (
     <div>
-      <h1>Listing Student Siblings</h1>
+      <h1>Applicants' Siblings Information</h1>
       <Table responsive>
         <thead>
           <tr>
