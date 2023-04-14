@@ -20,7 +20,7 @@ function NewStudentForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = { fname, mname, lname , adm, district, division, location, sublocation, village, ward, ever_received_NGCDF};
-    fetch('http://localhost:9292/students', {
+    fetch('https://sinatra-project-1.onrender.com/students', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

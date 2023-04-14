@@ -6,13 +6,13 @@ function School() {
   const [schools, setSchools] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9292/schools')
+    fetch('https://sinatra-project-1.onrender.com/schools')
       .then((r) => r.json())
       .then((data) => setSchools(data));
   }, []);
 
   const handleDelete = (schoolId) => {
-    fetch(`http://localhost:9292/schools/${schoolId}`, {
+    fetch(`https://sinatra-project-1.onrender.com/schools/${schoolId}`, {
       method: 'DELETE'
     })
       .then((r) => r.json())

@@ -6,13 +6,13 @@ function Sibling() {
   const [siblings, setSiblings] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9292/siblings')
+    fetch('https://sinatra-project-1.onrender.com/siblings')
       .then((r) => r.json())
       .then((data) => setSiblings(data));
   }, []);
 
   const handleDelete = (siblingId) => {
-    fetch(`http://localhost:9292/siblings/${siblingId}`, {
+    fetch(`https://sinatra-project-1.onrender.com/siblings/${siblingId}`, {
       method: 'DELETE'
     })
       .then((r) => r.json())

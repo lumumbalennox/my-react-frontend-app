@@ -6,13 +6,13 @@ function Parent() {
   const [parents, setParents] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9292/parents')
+    fetch('https://sinatra-project-1.onrender.com/parents')
       .then((r) => r.json())
       .then((data) => setParents(data));
   }, []);
 
   const handleDelete = (parentId) => {
-    fetch(`http://localhost:9292/parents/${parentId}`, {
+    fetch(`https://sinatra-project-1.onrender.com/parents/${parentId}`, {
       method: 'DELETE'
     })
       .then((r) => r.json())

@@ -11,7 +11,7 @@ import Constraint from "./Constraint";
 import NewStudentForm from "./NewStudentForm";
 
 function App() {
- 
+
   return <div>
  
       <ul class="nav-list">

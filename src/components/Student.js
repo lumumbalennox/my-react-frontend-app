@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-// import NewStudentForm from './NewStudentForm';
+import UpdateStudent from './UpdateStudent';
 
 function Student() {
+  // set state
   const [students, setStudents] = useState([]);
   
+  // grab the first data
   useEffect(() => {
-    fetch('http://localhost:9292/students')
+    fetch('https://sinatra-project-1.onrender.com/students')
       .then((r) => r.json())
       .then((data) => setStudents(data));
   }, []);
 
+  // update customers on page after edit
+  function onUpdateStudent(updatedStudent) {
+    const updatedStudents = students.map(
+      student => {
+        if (student.id === updatedStudent.id) {
+          return updatedStudent
+        } else {return student}
+      }
+    )
+    setStudents(updatedStudents)
+  }
+  // handling deletions
   const handleDelete = (studentId) => {
-    fetch(`http://localhost:9292/students/${studentId}`, {
+    fetch(`https://sinatra-project-1.onrender.com/students/${studentId}`, {
       method: 'DELETE'
     })
       .then((r) => r.json())

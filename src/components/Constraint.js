@@ -6,13 +6,13 @@ function Constraint() {
   const [constraints, setConstraints] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9292/constraints')
+    fetch('https://sinatra-project-1.onrender.com/constraints')
       .then((r) => r.json())
       .then((data) => setConstraints(data));
   }, []);
 
   const handleDelete = (constraintId) => {
-    fetch(`http://localhost:9292/constraints/${constraintId}`, {
+    fetch(`https://sinatra-project-1.onrender.com/constraints/${constraintId}`, {
       method: 'DELETE'
     })
       .then((r) => r.json())
